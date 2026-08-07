@@ -45,8 +45,8 @@ class WPS_Indexer_Filter_Acf {
 	public static function woocommerce_product_search_indexer_filter_content( $content, $context, $post_id ) {
 		if ( $context === 'post_content' ) {
 			$fields = array( 'synonymous', 'common_name' );
-			$product = wc_get_product( $post_id );
 			$meta_values = array();
+			$product = wc_get_product( $post_id );
 			if ( $product ) {
 				foreach ( $fields as $meta_key ) {
 					$meta_value = $product->get_meta( $meta_key );
