@@ -22,7 +22,7 @@ class WPS_Indexer_Filter_Acf {
 
 	public static function acf_save_post( $post_id ) {
 		$product = wc_get_product( $post_id );
-		if ( $product ) { error_log( 'ACF Save post' );
+		if ( $product ) {
 			$indexer = new WooCommerce_Product_Search_Indexer();
 			$indexer->index( $post_id );
 		}
